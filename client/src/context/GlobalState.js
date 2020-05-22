@@ -17,7 +17,6 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   // Actions
-
   const getTransactions = async () => {
     try {
       const res = await axios.get('/api/v1/transactions');
@@ -49,7 +48,14 @@ export const GlobalProvider = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ transactions: state.transactions, deleteTransaction, addTransaction }}
+      value={{
+        transactions: state.transactions,
+        deleteTransaction,
+        addTransaction,
+        getTransactions,
+        error: state.error,
+        loading: state.loading,
+      }}
     >
       {children}
     </GlobalContext.Provider>
