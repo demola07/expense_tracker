@@ -7,9 +7,9 @@ dotenv.config({ path: './config/config.env' });
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello');
-});
+const transactions = require('./routes/transactions');
+
+app.use('/api/v1/transactions', transactions);
 
 const PORT = process.env.PORT || 5000;
 
