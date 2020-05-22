@@ -13,7 +13,7 @@ const Transaction = ({ transaction }) => {
       <span>
         {sign} ₦ {Math.abs(transaction.amount)}
       </span>
-      <button className='delete-btn' onClick={() => deleteTransaction(transaction.id)}>
+      <button className='delete-btn' onClick={() => deleteTransaction(transaction._id)}>
         x
       </button>
     </li>
