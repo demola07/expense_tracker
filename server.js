@@ -9,6 +9,8 @@ connectDB();
 
 const app = express();
 
+app.use(express.json());
+
 const transactions = require('./routes/transactions');
 
 app.use('/api/v1/transactions', transactions);
