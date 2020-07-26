@@ -54,6 +54,8 @@ exports.addTransaction = async (req, res, next) => {
 // @route DELETE /api/v1/transactions/:id
 // @access Public
 exports.deleteTransaction = async (req, res, next) => {
+
+  console.log(req.params.id)
   try {
     const transaction = await Transaction.findById(req.params.id);
 
